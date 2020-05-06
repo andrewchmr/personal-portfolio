@@ -10,7 +10,7 @@ export const AsteroidsBackground = () => {
         let asteroids: Asteroid[] = [];
         p.setup = () => {
             p.createCanvas(p.windowWidth, p.windowHeight);
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 20; i++) {
                 asteroids.push(new Asteroid(p));
             }
         };
