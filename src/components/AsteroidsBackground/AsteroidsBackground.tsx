@@ -25,6 +25,10 @@ export const AsteroidsBackground = () => {
             }
         };
 
+        p.windowResized = () => {
+            p.resizeCanvas(p.windowWidth, p.windowHeight);
+        };
+
         const handleMouseMove = (a: Asteroid, index: number) => {
             if (a.isOver(p.mouseX, p.mouseY)) {
                 if (a.r > 10) {
