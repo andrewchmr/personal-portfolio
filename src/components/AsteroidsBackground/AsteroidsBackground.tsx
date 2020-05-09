@@ -16,7 +16,7 @@ export const AsteroidsBackground = () => {
         };
 
         p.draw = () => {
-            p.background('#121212');
+            p.background(0);
             for (let i = asteroids.length - 1; i >= 0; i--) {
                 asteroids[i].render();
                 asteroids[i].update();
