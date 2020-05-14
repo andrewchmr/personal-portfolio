@@ -1,0 +1,29 @@
+.IconsSocial {
+  position: fixed;
+  margin-right: 15px;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 40;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+
+  & img {
+    width: 30px;
+  }
+
+  &__github {
+    padding-bottom: 5px;
+  }
+
+  &__linkedin {
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .IconsSocial {
+    display: none;
+  }
+}
