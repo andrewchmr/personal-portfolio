@@ -32,7 +32,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 
-    &__--right, &__--left {
+    &--right, &--left {
       -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
       flex: 0 0 auto;
@@ -40,11 +40,11 @@
       max-width: 100%;
     }
 
-    &__--right {
+    &--right {
       text-align: right;
     }
 
-    &__--title {
+    &--title {
       -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
       flex: 0 0 auto;
@@ -62,15 +62,15 @@
 
     &__bar {
 
-      &__--left, &__--right {
+      &--left, &--right {
         width: calc(50% - 1.875rem);
       }
 
-      &__--left {
+      &--left {
         margin-right: auto;
       }
 
-      &__--right {
+      &--right {
         margin-left: auto;
       }
 
