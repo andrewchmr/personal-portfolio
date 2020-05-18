@@ -1,14 +1,13 @@
 import React from "react";
-import './Header.scss';
-import {Link} from "react-router-dom";
 import {Hamburger} from "./Hamburger/Hamburger";
+import Link from 'next/link';
 
 export const Header = () => {
     return <header className="Header">
         <nav className="Header__bar">
             <div className="Header__bar--left">
                 <div className="Header__bar--title">
-                    <Link to={'/'}>Andriy Chemerynskiy</Link>
+                    <Link href={'/'}><a>Andriy Chemerynskiy</a></Link>
                 </div>
             </div>
             <Hamburger/>

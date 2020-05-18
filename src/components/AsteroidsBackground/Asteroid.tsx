@@ -11,7 +11,7 @@ export class Asteroid {
     constructor(p: p5, pos?: Vector, r?: number, vel?: Vector) {
         this.p = p;
         this.pos = pos ? pos.copy() : this.getRandomPosition();
-        this.r = r ? r * 0.25 : p.random(20, 70);
+        this.r = r ? r * 0.25 : this.getRandomRadius();
         this.vel = this.getRandomVelocity(vel);
         this.total = p.floor(p.random(5, 15));
         this.offset = this.getRandomOffset();
@@ -33,11 +33,10 @@ export class Asteroid {
         p.pop();
     };
 
-    public breakup() {
-        return [new Asteroid(this.p, this.pos, this.r, this.vel),
-            new Asteroid(this.p, this.pos, this.r, this.vel),
-            new Asteroid(this.p, this.pos, this.r, this.vel),
-            new Asteroid(this.p, this.pos, this.r, this.vel)];
+    public breakup(scaleRadius?: boolean) {
+        return [...Array(4)].map(
+            () => new Asteroid(this.p, this.pos,
+                scaleRadius ? this.p.random(5, 10) * 1.25 : this.r, this.vel));
     };
 
     public isOver(x: number, y: number) {
@@ -60,7 +59,17 @@ export class Asteroid {
         }
     }
 
+    private getRandomRadius() {
+        const p = this.p;
+        if (p.windowWidth < 800) {
+            return p.random(1, 10);
+        } else {
+            return p.random(20, 70);
+        }
+    }
+
     private getRandomVelocity(vel: Vector | undefined) {
+        const Vector = require("p5").Vector;
         const v = Vector.random2D();
         return vel ? Vector.mult(v, 0.5) : Vector.mult(v, 0.25);
     }

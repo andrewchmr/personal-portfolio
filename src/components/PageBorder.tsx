@@ -1,5 +1,4 @@
 import React from "react";
-import './PageBorder.scss';
 
 export const PageBorder = () => {
     return <div className="PageBorder">

@@ -1,5 +1,4 @@
 import React from "react";
-import './Hamburger.scss';
 
 export const Hamburger = () => {
     return <button className="Hamburger">
