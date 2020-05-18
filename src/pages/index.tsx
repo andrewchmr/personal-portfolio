@@ -3,7 +3,7 @@ import ReactTooltip from "react-tooltip";
 
 function Index() {
     const renderTooltips = () => {
-        return <><ReactTooltip className={'Index__tooltip'} id='my-photo'>
+        return <><ReactTooltip className={'Index__tooltip'} place="left" id='my-photo'>
             <img className={'Index__photo Index__photo--vertical'}
                  alt={'Andriy Chemerynskiy Photo'}
                  src={'/media/personal-photo.jpg'}/>
