@@ -1,0 +1,39 @@
+.Index {
+
+  &__photo {
+    object-fit: fill;
+
+    &--vertical {
+      height: 500px;
+    }
+
+    &--horizontal {
+      width: 500px;
+    }
+  }
+
+  &__tooltip {
+    transition: opacity 500ms ease-out, visibility 500ms ease-out !important;
+    z-index: -1 !important;
+    border: none !important;
+    background: inherit !important;
+
+    &.show {
+      opacity: 1 !important;
+    }
+  }
+
+  & > span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .Index {
+    &__tooltip {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+}

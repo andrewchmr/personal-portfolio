@@ -6,18 +6,18 @@ export const IconsSocial = () => {
            className='IconsSocial__linkedin'
            target="_blank"
            rel="noopener noreferrer">
-            <img alt='LinkedIn logo' src={'/media/linkedin_logo.svg'}/>
+            <img alt='LinkedIn logo' src={'/media/linkedin-logo.svg'}/>
         </a>
         <a href='https://github.com/andrewchmr'
            className='IconsSocial__github'
            target="_blank"
            rel="noopener noreferrer">
-            <img alt='Github logo' src={'/media/github_logo.svg'}/>
+            <img alt='Github logo' src={'/media/github-logo.svg'}/>
         </a>
         <a href='https://twitter.com/andrewchmr'
            target="_blank"
            rel="noopener noreferrer">
-            <img alt='Twitter logo' src={'/media/twitter_logo.svg'}/>
+            <img alt='Twitter logo' src={'/media/twitter-logo.svg'}/>
         </a>
     </div>
 };
