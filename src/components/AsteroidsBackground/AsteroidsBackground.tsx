@@ -25,6 +25,12 @@ export const AsteroidsBackground = () => {
                 asteroids[i].edges();
                 handleMouseMove(asteroids[i], i);
             }
+
+            if (asteroids.length < ASTEROIDS_NUMBER) {
+                const randomX = p.random(p.width + 100, p.width + 200);
+                const randomY = p.random(p.height + 100, p.height + 200);
+                asteroids.push(new Asteroid(p, p.createVector(randomX, randomY)));
+            }
         };
 
         p.windowResized = () => {
