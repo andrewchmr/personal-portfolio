@@ -1,0 +1,71 @@
+.Layout {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100vh;
+    max-height: 100vh;
+    padding: 36px 24px;
+    position: relative;
+  }
+
+  &__content {
+    font-family: cardo, source sans pro, -apple-system, BlinkMacSystemFont, helvetica neue, sans-serif;
+    font-size: 21px;
+    line-height: 1.63636;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &--center {
+      max-width: 650px;
+      padding: 0 20px 100px;
+    }
+
+    &--fullscreen {
+      align-self: flex-end;
+      padding: 0 20px 70px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media print, screen and (min-width: 640px) {
+
+  .Layout {
+    &__container {
+      padding: 50px;
+    }
+
+    &__content--fullscreen {
+      padding: 0;
+      justify-content: center;
+    }
+
+    &__content--center {
+      padding: 80px 20px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media print, screen and (min-width: 1025px) {
+  .Layout__content--fullscreen {
+    align-self: auto;
+    justify-content: flex-end;
+  }
+}

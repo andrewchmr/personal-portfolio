@@ -1,7 +1,11 @@
 import React from "react";
+import {Layout} from "../components/Layout";
 
 function Contact() {
-    return (<>
+    return (
+        <Layout
+            pageTitlePrefix={'Contact'}
+            description={'Do you want to talk? Just drop me a line then, don’t be shy!'}>
             <div className="contacts-content__socials">
                 <ul>
                     <li><a href="https://github.com/andrewchmr" target="_blank"
@@ -16,7 +20,7 @@ function Contact() {
             <div>Just drop me a line then, don’t be shy!</div>
             <p><a style={{textDecoration: 'underline'}}
                   href={'mailto:andrzej.chem@gmail.com'}>andrzej.chem@gmail.com</a></p>
-        </>
+        </Layout>
     )
 }
 
