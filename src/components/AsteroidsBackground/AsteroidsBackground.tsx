@@ -25,12 +25,7 @@ export const AsteroidsBackground = () => {
                 asteroids[i].edges();
                 handleMouseMove(asteroids[i], i);
             }
-
-            if (asteroids.length < ASTEROIDS_NUMBER) {
-                const randomX = p.random(p.width + 100, p.width + 200);
-                const randomY = p.random(p.height + 100, p.height + 200);
-                asteroids.push(new Asteroid(p, p.createVector(randomX, randomY)));
-            }
+            respawn();
         };
 
         p.windowResized = () => {
@@ -51,6 +46,12 @@ export const AsteroidsBackground = () => {
                     asteroids = asteroids.concat(newAsteroids);
                 }
                 asteroids.splice(index, 1);
+            }
+        };
+
+        const respawn = () => {
+            if (asteroids.length < ASTEROIDS_NUMBER) {
+                asteroids.push(new Asteroid(p, p.createVector(-100, -100)));
             }
         }
     }, []);
