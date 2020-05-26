@@ -41,7 +41,7 @@ export class Asteroid {
 
     public isOver(x: number, y: number) {
         const d = this.p.dist(this.pos.x, this.pos.y, x, y);
-        return d < this.r;
+        return d < this.r + 20;
     };
 
     public edges() {
