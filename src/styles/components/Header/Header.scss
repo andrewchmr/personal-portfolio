@@ -38,6 +38,7 @@
       flex: 0 0 auto;
       width: auto;
       max-width: 100%;
+      display: none;
     }
 
     &--right {
@@ -49,12 +50,13 @@
       -ms-flex: 0 0 auto;
       flex: 0 0 auto;
       margin: 0;
+      text-decoration: none;
     }
 
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $breakpoint-tablet) {
   .Header {
     padding-left: 100px;
     padding-right: 100px;
@@ -63,7 +65,8 @@
     &__bar {
 
       &--left, &--right {
-        width: calc(50% - 1.875rem);
+        width: calc(50% - 30px);
+        display: block;
       }
 
       &--left {
@@ -75,11 +78,5 @@
       }
 
     }
-  }
-}
-
-@media screen and (max-width: 39.9375em) {
-  .Header__bar--left, .Header__bar--right {
-    display: none;
   }
 }

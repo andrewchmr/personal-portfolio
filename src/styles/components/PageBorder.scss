@@ -9,7 +9,7 @@
   -ms-touch-action: none;
   touch-action: none;
 
-  &__border{
+  &__border {
     stroke-dashoffset: 0;
     stroke-dasharray: 0;
     vector-effect: non-scaling-stroke;
@@ -24,7 +24,7 @@
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $breakpoint-tablet) {
   .PageBorder {
     top: 50px;
     left: 50px;

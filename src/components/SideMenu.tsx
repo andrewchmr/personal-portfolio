@@ -7,7 +7,7 @@ export const SideMenu = () => {
     const router = useRouter();
 
     const getLinkClassName = (pathName: string) => {
-        return router.pathname === pathName ? 'current' : '';
+        return `SideMenu__link${router.pathname === pathName ? '--current': ''}`;
     };
 
     return <div className="SideMenu">
