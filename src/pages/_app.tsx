@@ -11,13 +11,13 @@ import {Cursor} from "../components/Cursor";
 function MyApp({Component, pageProps}: AppProps) {
     return (
         <>
-            <Cursor/>
             <PageBorder/>
             <SideMenu/>
             <IconsSocial/>
             <AsteroidsBackground/>
             <Header/>
             <Component {...pageProps} />
+            <Cursor/>
         </>
     )
 }

@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 .IconsSocial {
   position: fixed;
   margin-right: 15px;
@@ -22,7 +24,7 @@
   }
 }
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: $breakpoint-tablet - 1px) {
   .IconsSocial {
     display: none;
   }

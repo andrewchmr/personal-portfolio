@@ -6,9 +6,9 @@ export const Header = () => {
     return <header className="Header">
         <nav className="Header__bar">
             <div className="Header__bar--left">
-                <div className="Header__bar--title">
-                    <Link href={'/'}><a>Andriy Chemerynskiy</a></Link>
-                </div>
+                <Link href={'/'}>
+                    <a className="Header__bar--title">Andriy Chemerynskiy</a>
+                </Link>
             </div>
             <Hamburger/>
             <div className="Header__bar--right">Software Development</div>

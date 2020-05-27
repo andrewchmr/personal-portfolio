@@ -1,4 +1,4 @@
-/*TODO: cleanup*/
+@import "../abstracts/variables";
 
 .SideMenu {
   left: 43px;
@@ -129,7 +129,7 @@
   padding: 0.7rem 1rem;
 }
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: $breakpoint-tablet - 1px) {
   .SideMenu {
     display: none;
   }
