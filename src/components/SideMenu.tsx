@@ -1,13 +1,18 @@
 import React from "react";
 import {useRouter} from "next/dist/client/router";
 import Link from 'next/link';
+import classNames from "classnames";
 
 export const SideMenu = () => {
 
     const router = useRouter();
 
     const getLinkClassName = (pathName: string) => {
-        return `SideMenu__link${router.pathname === pathName ? '--current': ''}`;
+        return classNames(
+            {
+                'SideMenu__link--current': router.pathname === pathName
+            }
+        );
     };
 
     return <div className="SideMenu">

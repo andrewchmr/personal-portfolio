@@ -1,5 +1,6 @@
 import React, {ReactNode} from "react";
 import Head from 'next/head';
+import classNames from "classnames";
 
 interface LayoutProps {
     children: ReactNode;
@@ -15,9 +16,13 @@ export const Layout = ({children, pageTitlePrefix, fullscreen, description}: Lay
         return pageTitlePrefix ? `${pageTitlePrefix} - ${basePageTitle}` : basePageTitle;
     };
 
-    const getContentClassName = () => {
-        return `Layout__content Layout__content--${fullscreen ? 'fullscreen' : 'center'}`;
-    };
+    const contentClasses = classNames(
+        'Layout__content',
+        {
+            'Layout__content--fullscreen': fullscreen,
+            'Layout__content--center': !fullscreen,
+        }
+    );
 
     return <>
         <Head>
@@ -28,7 +33,7 @@ export const Layout = ({children, pageTitlePrefix, fullscreen, description}: Lay
         </Head>
         <div className='Layout'>
             <div className='Layout__container'>
-                <div className={getContentClassName()}>
+                <div className={contentClasses}>
                     {children}
                 </div>
             </div>
