@@ -1,5 +1,11 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import {useRouter} from 'next/router'
+import classNames from "classnames";
+
+interface Position {
+    x: number,
+    y: number
+}
 
 const isMobile = () => {
     let ua = navigator.userAgent;
@@ -10,8 +16,11 @@ export const Cursor = () => {
 
     if (typeof navigator !== 'undefined' && isMobile()) return null;
 
-    const cursor = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
+    const [position, setPosition] = useState<Position>({x: 0, y: 0});
+    const [clicked, setClicked] = useState(false);
+    const [linkHovered, setLinkHovered] = useState(false);
+    const [hidden, setHidden] = useState(false);
 
     useEffect(() => {
         addEventListeners();
@@ -19,7 +28,7 @@ export const Cursor = () => {
     }, []);
 
     useEffect(() => {
-        handleLinkEvents()
+        handleLinkHoverEvents()
     }, [router.pathname]);
 
     const addEventListeners = () => {
@@ -39,50 +48,44 @@ export const Cursor = () => {
     };
 
     const onMouseMove = (e: MouseEvent) => {
-        if (cursor.current) {
-            cursor.current.style.left = `${e.pageX}px`;
-            cursor.current.style.top = `${e.pageY}px`;
-        }
+        setPosition({x: e.pageX, y: e.pageY});
     };
 
     const onMouseDown = () => {
-        if (cursor.current) {
-            cursor.current.classList.add('Cursor--clicked');
-        }
+        setClicked(true);
     };
 
     const onMouseUp = () => {
-        if (cursor.current) {
-            cursor.current.classList.remove('Cursor--clicked');
-        }
+        setClicked(false);
     };
 
     const onMouseLeave = () => {
-        if (cursor.current) {
-            cursor.current.classList.add('Cursor--hidden');
-        }
+        setHidden(true);
     };
 
     const onMouseEnter = () => {
-        if (cursor.current) {
-            cursor.current.classList.remove('Cursor--hidden');
-        }
+        setHidden(false);
     };
 
-    const handleLinkEvents = () => {
+    const handleLinkHoverEvents = () => {
         document.querySelectorAll("a, button").forEach(el => {
             el.addEventListener("mouseover", () => {
-                if (cursor.current) {
-                    cursor.current.classList.add('Cursor--link-hovered');
-                }
+                setLinkHovered(true);
             });
             el.addEventListener("mouseout", () => {
-                if (cursor.current) {
-                    cursor.current.classList.remove('Cursor--link-hovered');
-                }
+                setLinkHovered(false);
             });
         });
     };
 
-    return <div ref={cursor} className={'Cursor'}/>
+    const cursorClasses = classNames(
+        'Cursor',
+        {
+            'Cursor--clicked': clicked,
+            'Cursor--hidden': hidden,
+            'Cursor--link-hovered': linkHovered
+        }
+    );
+
+    return <div className={cursorClasses} style={{left: `${position.x}px`, top: `${position.y}px`}}/>
 };

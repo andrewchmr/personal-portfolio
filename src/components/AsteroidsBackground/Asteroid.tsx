@@ -61,7 +61,7 @@ export class Asteroid {
 
     private getRandomRadius() {
         const p = this.p;
-        if (p.windowWidth < 800) {
+        if (p.windowWidth < 768) {
             return p.random(1, 10);
         } else {
             return p.random(20, 70);

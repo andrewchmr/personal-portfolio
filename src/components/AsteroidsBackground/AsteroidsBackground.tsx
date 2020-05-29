@@ -31,7 +31,7 @@ export const AsteroidsBackground = () => {
         p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, p.windowHeight);
             for (let i = asteroids.length - 1; i >= 0; i--) {
-                if (p.windowWidth < 800 && asteroids[i].r > 10) {
+                if (p.windowWidth < 768 && asteroids[i].r > 10) {
                     const newAsteroids = asteroids[i].breakup(true);
                     asteroids = asteroids.concat(newAsteroids);
                     asteroids.splice(i, 1);
