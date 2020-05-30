@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  max-height: 100%;
+  align-items: stretch;
+  overflow: hidden;
+  background: #121212;
+  color: #fefefe;
+  font-family: 'Space Mono', monospace;
+  cursor: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: darkgrey;
+}
+
+::-moz-selection {
+  background: darkgrey;
+}
+
+a {
+  line-height: inherit;
+  color: #fefefe;
+  cursor: none;
+}
