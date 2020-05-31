@@ -8,8 +8,8 @@ body {
   max-height: 100%;
   align-items: stretch;
   overflow: hidden;
-  background: #121212;
-  color: #fefefe;
+  background: $primary-color;
+  color: $white;
   font-family: 'Space Mono', monospace;
   cursor: none;
 }
@@ -28,6 +28,6 @@ body {
 
 a {
   line-height: inherit;
-  color: #fefefe;
+  color: $white;
   cursor: none;
 }

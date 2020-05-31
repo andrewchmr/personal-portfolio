@@ -17,7 +17,7 @@
     position: absolute;
     display: block;
     height: 2px;
-    background-color: #fefefe;
+    background-color: $white;
     transition: .35s background-color;
 
     &--top {

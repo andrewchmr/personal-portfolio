@@ -1,0 +1,11 @@
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0.01deg);
+  }
+  50% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(0.01deg);
+  }
+}
