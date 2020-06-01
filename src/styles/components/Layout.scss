@@ -1,8 +1,9 @@
 .Layout {
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   z-index: 1;
 
   &__container {
@@ -16,8 +17,8 @@
     -ms-flex-align: center;
     align-items: center;
     box-sizing: border-box;
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
+    max-height: 100%;
     padding: 36px 24px;
     position: relative;
   }
@@ -31,41 +32,52 @@
     width: 100%;
 
     &--center {
-      max-width: 650px;
-      padding: 0 20px 100px;
+      max-width: 800px;
+      padding: 0 20px 20px;
     }
 
     &--fullscreen {
-      align-self: flex-end;
-      padding: 0 20px 70px;
+      align-self: center;
+      padding: 200px 20px 20px;
       display: flex;
       justify-content: flex-end;
     }
   }
 }
 
-@media print, screen and (min-width: 640px) {
+@media print, screen and (min-width: $breakpoint-tablet) {
 
   .Layout {
     &__container {
       padding: 50px;
     }
 
-    &__content--fullscreen {
-      padding: 0;
-      justify-content: center;
-    }
+    &__content {
+      &--fullscreen {
+        justify-content: center;
+        padding: 300px 100px 20px;
+      }
 
-    &__content--center {
-      padding: 80px 20px;
-      font-size: 30px;
+      &--center {
+        padding: 80px 80px;
+        font-size: 30px;
+      }
     }
   }
 }
 
-@media print, screen and (min-width: 1025px) {
+@media print, screen and (orientation: landscape) {
   .Layout__content--fullscreen {
     align-self: auto;
     justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+@media print, screen and (min-width: $breakpoint-laptop) {
+  .Layout__content--fullscreen {
+    align-self: auto;
+    justify-content: flex-end;
+    padding: 0;
   }
 }
