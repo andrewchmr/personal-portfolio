@@ -1,16 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {useRouter} from 'next/router'
 import classNames from "classnames";
+import {isMobile} from "../utils/isMobile";
 
 interface Position {
     x: number,
     y: number
 }
-
-const isMobile = () => {
-    let ua = navigator.userAgent;
-    return /Android|Mobi|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-};
 
 export const Cursor = () => {
 

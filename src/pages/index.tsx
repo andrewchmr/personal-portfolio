@@ -1,9 +1,13 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import {Layout} from "../components/Layout";
+import {isMobile} from "../utils/isMobile";
 
 function Index() {
     const renderTooltips = () => {
+
+        if (typeof navigator !== 'undefined' && isMobile()) return null;
+
         return (<>
             <ReactTooltip className={'Index__tooltip'} arrowColor={'#121212'}
                           uuid="my-photo" place="left" id='my-photo'>

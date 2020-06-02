@@ -28,15 +28,6 @@
   }
 }
 
-@media screen and (max-width: 39.9375em) {
-  .Index {
-    &__tooltip {
-      display: none !important;
-      visibility: hidden !important;
-    }
-  }
-}
-
 .__react_component_tooltip {
   border-radius: 3px;
   display: inline-block;
