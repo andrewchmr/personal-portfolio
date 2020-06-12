@@ -1,5 +1,6 @@
 import React from "react";
-import {Layout} from "../components/Layout";
+import { Layout } from "../components/Layout";
+import Link from "next/link";
 
 const Skills = () => {
 
@@ -22,8 +23,9 @@ const Skills = () => {
                 <p>Passionate about data visualization and creating cool user interfaces.</p>
                 <p>Visit my <a href='https://www.linkedin.com/in/andriy-chemerynskiy-9a4430139/'
                                target="_blank"
-                               rel="noopener noreferrer">LinkedIn</a> profile for more information or just <a
-                    href={'mailto:andrzej.chem@gmail.com'}>contact</a> me.</p></div>
+                               rel="noopener noreferrer">LinkedIn</a> profile for more information or just <Link
+                    href={'/contact'}>
+                    <a>contact</a></Link> me.</p></div>
             <div className="Skills__stripes-wrapper">
                 <div className="Skills__stripe Skills__stripe--first">
                     {stringToListElements('React Angular Redux Node.js React Native Express Docker Git ')}

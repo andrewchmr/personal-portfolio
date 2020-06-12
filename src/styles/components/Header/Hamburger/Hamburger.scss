@@ -79,6 +79,6 @@
 
 @media print, screen and (min-width: $breakpoint-tablet) {
   .Hamburger {
-    margin: 0;
+    display: none;
   }
 }
