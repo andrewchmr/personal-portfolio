@@ -12,13 +12,14 @@
   background: 0 0;
   line-height: 1;
   cursor: none;
+  outline: none;
 
   &__line {
     position: absolute;
     display: block;
     height: 2px;
     background-color: $white;
-    transition: .35s background-color;
+    transition: all 500ms ease;
 
     &--top {
       top: 0;
@@ -44,6 +45,25 @@
     &--bottom {
       bottom: 0;
       left: 5px;
+    }
+  }
+
+  body.menu--open &__line{
+    background-color: black;
+
+    &--top{
+      right: 5px;
+      transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 9);
+    }
+
+    &--middle{
+      left: 0;
+      transform: matrix(0, 0, 0, 1, 0, 0);
+    }
+
+    &--bottom{
+      left: 5px;
+      transform: matrix(0.7071, -0.7071, 0.7071, 0.7071, 0, -9);
     }
   }
 }

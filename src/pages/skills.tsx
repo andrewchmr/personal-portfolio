@@ -18,8 +18,7 @@ const Skills = () => {
             fullscreen>
             <div className={'Skills__text'}><p>TypeScript/JavaScript enthusiast experienced with React and Angular.
                 Open to new technologies and development opportunities.</p>
-                <p>Passionate about data visualisation and creating cool user interfaces.</p>
-
+                <p>Passionate about data visualization and creating cool user interfaces.</p>
                 <p>Visit my <a href='https://www.linkedin.com/in/andriy-chemerynskiy-9a4430139/'
                                target="_blank"
                                rel="noopener noreferrer">LinkedIn</a> profile for more information or just <a

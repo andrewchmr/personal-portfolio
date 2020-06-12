@@ -116,3 +116,7 @@
     display: none;
   }
 }
+
+body.menu--open .SideMenu {
+  display: none;
+}

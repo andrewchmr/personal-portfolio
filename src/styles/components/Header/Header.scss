@@ -31,6 +31,7 @@
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    color: $white;
 
     &--right, &--left {
       -webkit-flex: 0 0 auto;
@@ -51,8 +52,17 @@
       flex: 0 0 auto;
       margin: 0;
       text-decoration: none;
+      color: $white;
     }
 
+  }
+
+  body.menu--open &__bar {
+    color: black;
+
+    &--title {
+      color: black;
+    }
   }
 }
 
