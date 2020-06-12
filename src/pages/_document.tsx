@@ -1,4 +1,4 @@
-import Document, {Html, Head, Main, NextScript} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import React from "react";
 
 class MyDocument extends Document {
@@ -22,8 +22,11 @@ class MyDocument extends Document {
                     <meta name="application-name" content="andrewchmr"/>
                     <meta name="msapplication-TileColor" content="#121212"/>
                     <meta name="theme-color" content="#121212"/>
-                    <meta name="author" content="Andriy Chemerinskiy"/>
+                    <meta name="author" content="Andriy Chemerynskiy"/>
+                    <meta property="og:title" content="Andriy Chemerynskiy Portfolio"/>
                     <meta property="og:type" content="website"/>
+                    <meta name="twitter:card" content="summary_large_image"/>
+                    <meta name="twitter:title" content="Andriy Chemerynskiy Portfolio"/>
                 </Head>
                 <body>
                 <Main/>

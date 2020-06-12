@@ -26,7 +26,8 @@ function Index() {
 
     return (
         <Layout pageTitlePrefix={''}
-                description={'Hey, I’m Andriy Chemerynskiy, a Software Engineer currently based in Wroclaw, Poland.'}>
+                description={'Hey, I’m Andriy Chemerynskiy, a Software Engineer currently based in Wroclaw, Poland.'}
+                imageUrl={'/static/about.png'}>
             <div className={'Index'}>Hey, I’m <a data-tip={true} data-for="my-photo">Andriy Chemerynskiy</a>
                 , a Software Engineer currently based in <a data-tip={true}
                                                             data-for="wroclaw-photo">Wroclaw, Poland</a>.
