@@ -27,7 +27,6 @@
       animation-duration: 0.5s;
       animation-name: hamburger-line-top;
       animation-fill-mode: forwards;
-      animation-delay: 0.5s;
     }
 
     &--short {
@@ -46,7 +45,7 @@
       animation-duration: 0.5s;
       animation-name: hamburger-line-middle;
       animation-fill-mode: forwards;
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
 
     &--bottom {
@@ -54,7 +53,7 @@
       animation-duration: 0.5s;
       animation-name: hamburger-line-bottom;
       animation-fill-mode: forwards;
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
   }
 

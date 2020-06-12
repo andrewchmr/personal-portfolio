@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { Hamburger } from "./Hamburger/Hamburger";
 import Link from 'next/link';
 import { AppContext } from "../../context/AppContext";
+import dynamic from "next/dist/next-server/lib/dynamic";
+
+const Hamburger = dynamic(() => import('./Hamburger/Hamburger'));
 
 export const Header = () => {
     const context = useContext(AppContext);

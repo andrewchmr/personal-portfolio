@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../../context/AppContext";
 
-export const Hamburger = () => {
+const Hamburger = () => {
     const context = useContext(AppContext);
 
     const toggleMenu = () => {
@@ -14,3 +14,5 @@ export const Hamburger = () => {
         <span className="Hamburger__line Hamburger__line--short Hamburger__line--bottom"/>
     </button>
 };
+
+export default Hamburger;
