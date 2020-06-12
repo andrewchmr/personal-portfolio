@@ -25,6 +25,8 @@ class MyDocument extends Document {
                     <meta name="author" content="Andriy Chemerynskiy"/>
                     <meta property="og:title" content="Andriy Chemerynskiy Portfolio"/>
                     <meta property="og:type" content="website"/>
+                    <meta property="og:site_name" content="Andriy Chemerynskiy Portfolio"/>
+                    <meta property="og:url" content="https://andrewchmr.com"/>
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta name="twitter:title" content="Andriy Chemerynskiy Portfolio"/>
                 </Head>

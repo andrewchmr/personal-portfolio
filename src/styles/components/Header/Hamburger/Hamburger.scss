@@ -20,10 +20,14 @@
     height: 2px;
     background-color: $white;
     transition: all 500ms ease;
+    opacity: 0;
 
     &--top {
       top: 0;
-      right: 5px;
+      animation-duration: 0.5s;
+      animation-name: hamburger-line-top;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
     }
 
     &--short {
@@ -38,13 +42,19 @@
     }
 
     &--long {
-      left: 0;
       right: 0;
+      animation-duration: 0.5s;
+      animation-name: hamburger-line-middle;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
     }
 
     &--bottom {
       bottom: 0;
-      left: 5px;
+      animation-duration: 0.5s;
+      animation-name: hamburger-line-bottom;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
     }
   }
 
