@@ -1,5 +1,5 @@
 import React from "react";
-import {Layout} from "../components/Layout";
+import { Layout } from "../components/Layout";
 
 function Contact() {
     return (
@@ -17,7 +17,7 @@ function Contact() {
                 </ul>
             </div>
             <div>Do you want to talk?</div>
-            <div>Just drop me a line then, don’t be shy!</div>
+            <div>Let's make something incredible together!</div>
             <p><a href='mailto:andrzej.chem@gmail.com'>andrzej.chem@gmail.com</a></p>
         </Layout>
     )
