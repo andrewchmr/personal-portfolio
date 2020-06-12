@@ -2,4 +2,12 @@
   display: block;
   position: fixed;
   z-index: -1;
+  opacity: 0;
+  -webkit-animation-name: fade-in;
+  animation-name: fade-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  will-change: transform;
 }

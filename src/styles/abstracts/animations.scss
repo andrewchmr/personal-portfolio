@@ -9,3 +9,12 @@
     transform: rotateX(-100deg) rotate(0.01deg);
   }
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
