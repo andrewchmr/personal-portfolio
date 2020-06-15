@@ -25,7 +25,7 @@ export const Layout = ({children, pageTitlePrefix, fullscreen, description, imag
         }
     );
 
-    const image = imageUrl || '/static/about';
+    const image = imageUrl || 'https://andrewchmr.com/static/about';
 
     return <>
         <Head>

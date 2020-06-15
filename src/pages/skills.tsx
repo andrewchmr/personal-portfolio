@@ -16,7 +16,7 @@ const Skills = () => {
         <Layout
             pageTitlePrefix={'Skills & Experience'}
             description={'TypeScript/JavaScript enthusiast experienced with React and Angular. Open to new technologies and development opportunities.'}
-            imageUrl={'/static/skills.png'}
+            imageUrl={'https://andrewchmr.com/static/skills.png'}
             fullscreen>
             <div className={'Skills__text'}><p className={'Skills__paragraph'}>TypeScript/JavaScript enthusiast
                 experienced with React and Angular.
