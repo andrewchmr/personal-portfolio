@@ -65,10 +65,7 @@ export const Cursor = () => {
 
     const handleLinkHoverEvents = () => {
         document.querySelectorAll("a, button").forEach(el => {
-            // TODO: improve handler
             el.addEventListener("mouseover", () => setLinkHovered(true));
-            el.addEventListener("mousemove", () => setLinkHovered(true));
-            el.addEventListener("mousedown", () => setLinkHovered(false));
             el.addEventListener("mouseout", () => setLinkHovered(false));
         });
     };
