@@ -1,6 +1,9 @@
-const withWorkbox = require("next-with-workbox");
+const withPWA = require('next-pwa');
 
-module.exports = withWorkbox({
+module.exports = withPWA({
+    pwa: {
+        dest: 'public'
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
