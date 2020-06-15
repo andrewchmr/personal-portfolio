@@ -8,6 +8,12 @@
   text-transform: uppercase;
   top: 50%;
   z-index: 40;
+  -webkit-animation-name: fade-in;
+  animation-name: fade-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
 
   &__list {
     padding: 0;

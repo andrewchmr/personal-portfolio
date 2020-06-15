@@ -16,6 +16,12 @@
     top: 0;
     height: 100%;
     width: 100%;
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 
     & .Skills__stripe--third li, & .Skills__stripe--first li {
       border-left: 1px solid $black;
@@ -86,6 +92,53 @@
       & li:nth-child(#{$i}) {
         transform: translate(-50%, -50%) rotate(#{-30 + 6 * $i }deg) translateY(-35vw) rotateX(90deg);
       }
+    }
+  }
+
+  &__paragraph {
+    position: relative;
+    display: inline-block;
+
+    &::after{
+      -webkit-animation-duration: .8s;
+      animation-duration: .8s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      background-color: #fefefe;
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-transform: scale3d(0, 1, 1);
+      transform: scale3d(0, 1, 1);
+      -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+      transform-origin: left center;
+      transition: .35s transform;
+    }
+
+    &:nth-child(1)::after {
+        -webkit-animation-name: animateStripfromLeft;
+        animation-name: animateStripfromLeft;
+    }
+
+    &:nth-child(2)::after{
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s;
+        -webkit-animation-name: animateStripfromRight;
+        animation-name: animateStripfromRight;
+    }
+
+    &:nth-child(3)::after{
+        -webkit-animation-delay: .4s;
+        animation-delay: .4s;
+        -webkit-animation-name: animateStripfromLeft;
+        animation-name: animateStripfromLeft;
     }
   }
 }

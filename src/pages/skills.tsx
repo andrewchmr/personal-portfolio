@@ -18,12 +18,15 @@ const Skills = () => {
             description={'TypeScript/JavaScript enthusiast experienced with React and Angular. Open to new technologies and development opportunities.'}
             imageUrl={'/static/skills.png'}
             fullscreen>
-            <div className={'Skills__text'}><p>TypeScript/JavaScript enthusiast experienced with React and Angular.
+            <div className={'Skills__text'}><p className={'Skills__paragraph'}>TypeScript/JavaScript enthusiast
+                experienced with React and Angular.
                 Open to new technologies and development opportunities.</p>
-                <p>Passionate about data visualization and creating cool user interfaces.</p>
-                <p>Visit my <a href='https://www.linkedin.com/in/andriy-chemerynskiy-9a4430139/'
-                               target="_blank"
-                               rel="noopener noreferrer">LinkedIn</a> profile for more information or just <Link
+                <p className={'Skills__paragraph'}>Passionate about data visualization and creating cool user
+                    interfaces.</p>
+                <p className={'Skills__paragraph'}>Visit my <a
+                    href='https://www.linkedin.com/in/andriy-chemerynskiy-9a4430139/'
+                    target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a> profile for more information or just <Link
                     href={'/contact'}>
                     <a>contact</a></Link> me.</p></div>
             <div className="Skills__stripes-wrapper">

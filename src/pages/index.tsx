@@ -1,7 +1,7 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import {Layout} from "../components/Layout";
-import {isMobile} from "../utils/isMobile";
+import { Layout } from "../components/Layout";
+import { isMobile } from "../utils/isMobile";
 
 function Index() {
     const renderTooltips = () => {
@@ -28,9 +28,14 @@ function Index() {
         <Layout pageTitlePrefix={''}
                 description={'Hey, I’m Andriy Chemerynskiy, a Software Engineer currently based in Wroclaw, Poland.'}
                 imageUrl={'/static/about.png'}>
-            <div className={'Index'}>Hey, I’m <a data-tip={true} data-for="my-photo">Andriy Chemerynskiy</a>
-                , a Software Engineer currently based in <a data-tip={true}
-                                                            data-for="wroclaw-photo">Wroclaw, Poland</a>.
+            <div className={'Index'}>
+                <div className={'Index__paragraph'}>Hey, I’m{' '}
+                    <a data-tip={true} data-for="my-photo">Andriy Chemerynskiy</a>
+                    , a Software Engineer
+                </div>
+                <div className={'Index__paragraph'}> currently based in {' '}
+                    <a data-tip={true} data-for="wroclaw-photo">Wroclaw, Poland</a>.
+                </div>
                 {renderTooltips()}
             </div>
         </Layout>

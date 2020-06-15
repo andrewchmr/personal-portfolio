@@ -32,6 +32,13 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     color: $white;
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    will-change: transform;
 
     &--right, &--left {
       -webkit-flex: 0 0 auto;

@@ -17,9 +17,9 @@ function Contact() {
                            rel="noopener noreferrer">Twitter</a></li>
                 </ul>
             </div>
-            <div>Do you want to talk?</div>
-            <div>Let's make something incredible together!</div>
-            <p><a href='mailto:andrzej.chem@gmail.com'>andrzej.chem@gmail.com</a></p>
+            <div className={'Contact__paragraph'}>Do you want to talk?</div>
+            <div className={'Contact__paragraph'}>Let's make something incredible together!</div>
+            <div className={'Contact__paragraph'}><a href='mailto:andrzej.chem@gmail.com'>andrzej.chem@gmail.com</a></div>
         </Layout>
     )
 }
