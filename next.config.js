@@ -1,4 +1,6 @@
-module.exports = {
+const withWorkbox = require("next-with-workbox");
+
+module.exports = withWorkbox({
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
@@ -10,4 +12,4 @@ module.exports = {
 
         return config;
     },
-};
+});

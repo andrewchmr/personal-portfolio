@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import '../styles/main.scss';
@@ -10,6 +10,7 @@ import { Header } from "../components/Header/Header";
 import { Cursor } from "../components/Cursor";
 import useBodyClass from "../hooks/useBodyClass";
 import { AppContext } from '../context/AppContext';
+import { Workbox } from "workbox-window";
 
 const OverlayMenu = dynamic(
     () => import('../components/OverlayMenu'),
@@ -18,6 +19,22 @@ const OverlayMenu = dynamic(
 function MyApp({Component, pageProps}: AppProps) {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     useBodyClass(`${menuOpen ? 'menu--open' : ''}`);
+
+    useEffect(() => {
+        addServiceWorker();
+    }, []);
+
+    const addServiceWorker = () => {
+        if (
+            !("serviceWorker" in navigator) ||
+            process.env.NODE_ENV !== "production"
+        ) {
+            console.warn("Progressive Web App support is disabled");
+            return;
+        }
+        const wb = new Workbox("sw.js", {scope: "/"});
+        wb.register();
+    };
 
     const contextValue = {
         menuOpen,
