@@ -12,6 +12,7 @@ import useBodyClass from "../hooks/useBodyClass";
 import { AppContext } from '../context/AppContext';
 import { pageview } from "../utils/gtag";
 import Router from 'next/router';
+import { AwardCSSDA } from "../components/AwardCSSDA";
 
 const OverlayMenu = dynamic(
     () => import('../components/OverlayMenu'),
@@ -42,6 +43,7 @@ function MyApp({Component, pageProps}: AppProps) {
 
     return (
         <AppContext.Provider value={contextValue}>
+            <AwardCSSDA/>
             <PageBorder/>
             <SideMenu/>
             <IconsSocial/>

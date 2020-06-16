@@ -1,0 +1,16 @@
+.AwardCSSDA {
+  position: absolute;
+  right: 65px;
+  bottom: 70px;
+  z-index: 10;
+  -webkit-animation-name: fade-in;
+  animation-name: fade-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+@media print, screen and (max-width: $breakpoint-tablet - 1) {
+  display: none;
+}
