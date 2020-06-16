@@ -10,7 +10,8 @@ import { Header } from "../components/Header/Header";
 import { Cursor } from "../components/Cursor";
 import useBodyClass from "../hooks/useBodyClass";
 import { AppContext } from '../context/AppContext';
-import ReactGA from 'react-ga';
+import { pageview } from "../utils/gtag";
+import Router from 'next/router';
 
 const OverlayMenu = dynamic(
     () => import('../components/OverlayMenu'),
@@ -21,11 +22,17 @@ function MyApp({Component, pageProps}: AppProps) {
     useBodyClass(`${menuOpen ? 'menu--open' : ''}`);
 
     useEffect(() => {
-        initializeReactGA()
+        handleGoogleAnalytics();
     }, []);
 
-    const initializeReactGA = () => {
-        ReactGA.initialize('UA-150290652-3');
+    const handleGoogleAnalytics = () => {
+        const handleRouteChange = (url: string) => {
+            pageview(url);
+        };
+        Router.events.on('routeChangeComplete', handleRouteChange);
+        return () => {
+            Router.events.off('routeChangeComplete', handleRouteChange);
+        }
     };
 
     const contextValue = {
