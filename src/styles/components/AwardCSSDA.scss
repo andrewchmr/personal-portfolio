@@ -12,5 +12,7 @@
 }
 
 @media print, screen and (max-width: $breakpoint-tablet - 1) {
-  display: none;
+  .AwardCSSDA {
+    display: none;
+  }
 }
