@@ -59,10 +59,17 @@
       }
 
       &--center {
-        padding: 80px 80px;
+        padding: 80px 50px;
         font-size: 30px;
       }
     }
+  }
+}
+
+@media print, screen and (min-width: $breakpoint-tablet-landscape) {
+  &--center {
+    padding: 80px;
+    font-size: 30px;
   }
 }
 
