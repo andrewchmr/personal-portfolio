@@ -43,7 +43,7 @@ function MyApp({Component, pageProps}: AppProps) {
 
     return (
         <AppContext.Provider value={contextValue}>
-            {/*   <AwardCSSDA/>*/}
+            <AwardCSSDA/>
             <PageBorder/>
             <SideMenu/>
             <IconsSocial/>
