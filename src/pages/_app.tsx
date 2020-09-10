@@ -20,6 +20,7 @@ const OverlayMenu = dynamic(
 
 function MyApp({Component, pageProps}: AppProps) {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [linkHovered, setLinkHovered] = useState(false);
     useBodyClass(`${menuOpen ? 'menu--open' : ''}`);
 
     useEffect(() => {
@@ -38,7 +39,9 @@ function MyApp({Component, pageProps}: AppProps) {
 
     const contextValue = {
         menuOpen,
-        setMenuOpen
+        setMenuOpen,
+        linkHovered,
+        setLinkHovered
     };
 
     return (

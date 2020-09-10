@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Layout } from "../components/Layout";
 import Link from "next/link";
+import { AppContext } from "../context/AppContext";
 
 const Skills = () => {
+    const context = useContext(AppContext);
 
     const stringToListElements = (s: string) => {
         return (
@@ -28,7 +30,7 @@ const Skills = () => {
                     target="_blank"
                     rel="noopener noreferrer">LinkedIn</a> profile for more information or just <Link
                     href={'/contact'}>
-                    <a>contact</a></Link> me.</p></div>
+                    <a onClick={() => context?.setLinkHovered?.(false)}>contact</a></Link> me.</p></div>
             <div className="Skills__stripes-wrapper">
                 <div className="Skills__stripe Skills__stripe--first">
                     {stringToListElements('React Angular Redux Node.js React Native Express Docker Git ')}
