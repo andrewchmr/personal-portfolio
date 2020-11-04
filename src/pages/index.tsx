@@ -12,13 +12,13 @@ function Index() {
     return (<>
       <ReactTooltip className={'Index__tooltip'} arrowColor={'#121212'}
         uuid="my-photo" place="left" id='my-photo'>
-        <Image width={400} height={500} className={'Index__photo Index__photo--vertical'}
+        <Image priority width={400} height={500} className={'Index__photo Index__photo--vertical'}
           alt={'Andriy Chemerynskiy Photo'}
           src={'/static/personal-photo.jpg'} />
       </ReactTooltip>
       <ReactTooltip className={'Index__tooltip'} arrowColor={'#121212'}
         uuid="wroclaw-photo" place="right" id={'wroclaw-photo'}>
-        <Image width={500} height={352} className={'Index__photo Index__photo--horizontal'}
+        <Image priority width={500} height={352} className={'Index__photo Index__photo--horizontal'}
           alt={'Wroclaw, Poland Photo'}
           src={'/static/wroclaw.jpg'} />
       </ReactTooltip>
