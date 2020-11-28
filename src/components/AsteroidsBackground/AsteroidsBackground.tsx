@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef} from "react";
 import {Asteroid} from "./Asteroid";
 import p5 from "p5";
 
-const ASTEROIDS_NUMBER = 20;
+const ASTEROIDS_NUMBER = 10;
 const BG_COLOR = '#121212';
 
 export const AsteroidsBackground = () => {

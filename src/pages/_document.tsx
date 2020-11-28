@@ -50,6 +50,8 @@ class MyDocument extends Document {
                 <body>
                 <Main/>
                 <NextScript/>
+                 {/* Fix FOUC for Firefox */}
+                <script>0</script>
                 </body>
             </Html>
         )
