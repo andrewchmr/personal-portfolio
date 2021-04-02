@@ -1,8 +1,11 @@
 import React from "react";
 import Link from 'next/link';
 import { Layout } from "../components/Layout";
+import { AppContext } from "../context/AppContext";
 
 const Projects = () => {
+  const context = React.useContext(AppContext);
+
   return (
     <Layout
       pageTitlePrefix={`Projects`}
@@ -22,7 +25,7 @@ const Projects = () => {
         </div>
         <div>
           <div className="Projects__paragraph">
-            <h2><Link href="/"><a>Personal Portfolio</a></Link></h2>
+            <h2><Link href="/"><a onClick={() => context?.setLinkHovered?.(false)}>Personal Portfolio</a></Link></h2>
             <div className="Projects__date">May 2020 – Present</div>
           </div>
           <div className="Projects__desc Projects__paragraph">An idea was to create an interactive, not boring website that can showcase my work and experience.
