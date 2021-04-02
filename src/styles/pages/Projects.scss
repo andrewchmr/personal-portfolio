@@ -1,0 +1,91 @@
+.Projects {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 14px;
+  text-align: left;
+
+  & h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  &__date {
+    font-size: 12px;
+  }
+
+  &__desc {
+    margin-top: 15px;
+  }
+
+  &__paragraph {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      -webkit-animation-duration: 0.8s;
+      animation-duration: 0.8s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      background-color: #fefefe;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-transform: scale3d(0, 1, 1);
+      transform: scale3d(0, 1, 1);
+      -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+      transform-origin: left center;
+      transition: 0.35s transform;
+    }
+
+    &:nth-child(1)::after {
+      -webkit-animation-name: animateStripfromLeft;
+      animation-name: animateStripfromLeft;
+    }
+
+    &:nth-child(2)::after {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      -webkit-animation-name: animateStripfromRight;
+      animation-name: animateStripfromRight;
+    }
+
+    &:nth-child(3)::after {
+      -webkit-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+      -webkit-animation-name: animateStripfromLeft;
+      animation-name: animateStripfromLeft;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 22px;
+
+    &__date {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    font-size: 14px;
+
+    &__date {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-laptop) {
+    font-size: 22px;
+
+    &__date {
+      font-size: 18px;
+    }
+  }
+}
