@@ -6,7 +6,8 @@ const Projects = () => {
   return (
     <Layout
       pageTitlePrefix={`Projects`}
-      description={'Side projects that I sometimes work on when I am bored 💻'}>
+      description={'Side projects that I sometimes work on when I am bored 💻'}
+      imageUrl={'https://andrewchmr.com/static/projects.png'}>
       <div className="Projects">
         <div>
           <div className="Projects__paragraph">
