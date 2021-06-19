@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
 import React from "react";
 import { GA_TRACKING_ID } from "../utils/gtag";
 
@@ -31,11 +30,11 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://andrewchmr.com" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Andriy Chemerynskiy Portfolio" />
-          <Script
+          <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
-          <Script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
@@ -52,7 +51,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           {/* Fix FOUC for Firefox */}
-          <Script>0</Script>
+          <script>0</script>
         </body>
       </Html>
     )
