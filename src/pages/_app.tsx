@@ -2,7 +2,6 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import '../styles/main.scss';
-import { PageBorder } from "../components/PageBorder";
 import { SideMenu } from "../components/SideMenu";
 import { IconsSocial } from "../components/IconsSocial";
 import { Header } from "../components/Header/Header";
@@ -51,7 +50,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AppContext.Provider value={contextValue}>
       <AwardCSSDA />
-      <PageBorder />
       <SideMenu />
       <IconsSocial />
       <AsteroidsBackground />
