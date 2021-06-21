@@ -49,7 +49,7 @@ export const Cursor = () => {
     }, [addEventListeners, removeEventListeners]);
 
     const onMouseMove = (e: MouseEvent) => {
-        setPosition({x: e.pageX, y: e.pageY});
+        setPosition({x: e.clientX, y: e.clientY});
     };
 
     const onMouseDown = () => {
