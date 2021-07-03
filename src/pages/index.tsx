@@ -46,6 +46,7 @@ function Index({ location }: Props) {
         anchors={anchors}
         menu='#sideMenu'
         scrollingSpeed={1000}
+        licenseKey='FB7A698F-5FAA4A1E-87B53A37-B36648F0'
         render={() =>
         (
           <ReactFullpage.Wrapper>
