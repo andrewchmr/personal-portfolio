@@ -1,114 +1,29 @@
 .Skills {
+  display: flex;
+  flex-direction: column;
+
   &__text {
-    text-align: left;
+    text-align: center;
     z-index: 10000;
     font-size: 14px;
-    max-width: 100%;
     padding-right: 0;
   }
 
-  &__stripes-wrapper {
-    font-family: 'Space Mono', monospace;
-    line-height: 1;
-    text-transform: uppercase;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    -webkit-animation-name: fade-in;
-    animation-name: fade-in;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-
-    & .Skills__stripe--third li, & .Skills__stripe--first li {
-      border-left: 1px solid $black;
-      background-color: $black;
-      color: $white;
-    }
-  }
-
-  &__stripe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    height: 50%;
-    width: 100vw;
-    -webkit-transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
-    -o-transform: rotate(20deg);
-    transform: rotate(20deg);
-
-    & ul {
-      margin: 0;
-      list-style: none;
-      transform-style: preserve-3d;
-      text-transform: uppercase;
-      color: #000000;
-      font-weight: 400;
-      font-size: 6vw;
-    }
-
-    &--first {
-      top: 5vw;
-      left: -3.6vw;
-
-      & ul {
-        animation: three-dimensions-circle 60s linear infinite;
-      }
-    }
-
-    &--second {
-      top: 0;
-      left: -1.8vw;
-
-      & ul {
-        animation: three-dimensions-circle 30s linear infinite;
-      }
-    }
-
-    &--third {
-      top: -5vw;
-      left: 0;
-
-      & ul {
-        animation: three-dimensions-circle 100s linear infinite;
-      }
-    }
-
-    & li {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-left: 1px solid $white;
-      background-color: $white;
-    }
-
-    @for $i from 1 through 68 {
-      & li:nth-child(#{$i}) {
-        transform: translate(-50%, -50%) rotate(#{-30 + 6 * $i }deg) translateY(-35vw) rotateX(90deg);
-      }
-    }
-  }
-
-  &__paragraph {
+  & .paragraph {
     position: relative;
     display: inline-block;
+    margin: 18px 0;
 
-    &::after{
-      -webkit-animation-duration: .8s;
-      animation-duration: .8s;
+    &::after {
+      -webkit-animation-duration: 0.8s;
+      animation-duration: 0.8s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
       -webkit-animation-iteration-count: 1;
       animation-iteration-count: 1;
       background-color: #fefefe;
       bottom: 0;
-      content: '';
+      content: "";
       display: block;
       left: 0;
       position: absolute;
@@ -119,135 +34,66 @@
       -webkit-transform-origin: left center;
       -ms-transform-origin: left center;
       transform-origin: left center;
-      transition: .35s transform;
+      transition: 0.35s transform;
     }
+  }
 
-    &:nth-child(1)::after {
-        -webkit-animation-name: animateStripfromLeft;
-        animation-name: animateStripfromLeft;
-    }
+  &__circle-wrapper {
+    display: flex;
+    opacity: 0;
+    animation-duration: 0.5s;
+  }
 
-    &:nth-child(2)::after{
-        -webkit-animation-delay: .2s;
-        animation-delay: .2s;
-        -webkit-animation-name: animateStripfromRight;
-        animation-name: animateStripfromRight;
-    }
+  &__circle {
+    font-family: "Space Mono", monospace;
+    transform-style: preserve-3d;
+    animation: rotateCircle 15s linear infinite;
+    margin-bottom: 150px;
+  }
 
-    &:nth-child(3)::after{
-        -webkit-animation-delay: .4s;
-        animation-delay: .4s;
-        -webkit-animation-name: animateStripfromLeft;
-        animation-name: animateStripfromLeft;
-    }
+  &__circle-char {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    color: white;
+    line-height: 1;
+    font-size: 1em;
+    z-index: 10000;
+    padding: 5px 1px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    text-transform: capitalize;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transform: rotateY(calc(var(--char-index) * 7.2deg)) translateZ(100px) translateX(-50%) translateY(200%);
   }
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
-
-  .Skills__stripe {
-    height: 60%;
-  }
-
-  .Skills__text {
-    font-size: 22px;
-    height: 40%;
-    width: calc(50vw + 200px);
-  }
-}
-
-@media screen and (orientation: landscape) {
-
   .Skills {
-    &__stripe {
-      height: 90%;
-      width: calc(50vw + 20px);
-
-      &--first {
-        top: 2.5vw;
-        left: -1.8vw;
-      }
-
-      &--second {
-        top: 0;
-        left: -0.9vw;
-      }
-
-      &--third {
-        top: -2.5vw;
-        left: 0;
-      }
-
-      & ul {
-        font-size: 3vw;
-      }
-
-      @for $i from 1 through 68 {
-        & li:nth-child(#{$i}) {
-          transform: translate(-50%, -50%) rotate(#{-30 + 6 * $i }deg) translateY(-17.5vw) rotateX(90deg);
-        }
-      }
-    }
-
     &__text {
-      font-size: 14px;
-      max-width: 50%;
-      padding-right: 20px;
-      height: 100%;
+      font-size: 22px;
     }
 
-    @media screen and (min-width: $breakpoint-tablet) {
-      &__text {
-        font-size: 18px;
-        padding-right: 100px;
-        max-width: calc(50% - 120px);
-      }
+    &__circle {
+      margin-bottom: 300px;
+    }
 
-      &__stripe {
-        width: calc(50vw + 200px);
-      }
+    &__circle-char {
+      font-size: 1.5em;
+      padding: 5px 10px;
+      border-top: 5px solid white;
+      border-bottom: 5px solid white;
+      transform: rotateY(calc(var(--char-index) * 7.2deg)) translateZ(300px) translateX(-50%) translateY(100%);
     }
   }
 }
 
 @media screen and (min-width: $breakpoint-laptop) {
-
   .Skills {
-    &__stripe {
-      height: 90%;
-      width: calc(50vw + 200px);
-
-
-      &--first {
-        top: 2.5vw;
-        left: -1.8vw;
-      }
-
-      &--second {
-        top: 0;
-        left: -0.9vw;
-      }
-
-      &--third {
-        top: -2.5vw;
-        left: 0;
-      }
-
-      & ul {
-        font-size: 3vw;
-      }
-
-      @for $i from 1 through 68 {
-        & li:nth-child(#{$i}) {
-          transform: translate(-50%, -50%) rotate(#{-30 + 6 * $i }deg) translateY(-17.5vw) rotateX(90deg);
-        }
-      }
-    }
-
     &__text {
       font-size: 22px;
-      max-width: calc(50% - 120px);
-      padding-right: 100px;
       height: 100%;
     }
   }

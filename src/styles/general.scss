@@ -1,21 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,700");
+@import "abstracts/animations";
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  max-height: 100%;
   align-items: stretch;
-  overflow: hidden;
   background: $primary-color;
   color: $white;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   cursor: none;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: white !important;
 }
 
 ::selection {
@@ -30,4 +36,51 @@ a {
   line-height: inherit;
   color: $white;
   cursor: none;
+}
+
+.animateStripfromLeft {
+  &::after {
+    animation-duration: inherit;
+    animation-name: animateStripfromLeft;
+  }
+}
+
+.animateStripfromRight {
+  &::after {
+    animation-duration: inherit;
+    animation-name: animateStripfromRight;
+  }
+}
+
+.paragraph {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    background-color: #fefefe;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+    transition: 0.35s transform;
+  }
+}
+
+.fadeIn {
+  animation-name: fade-in;
+  animation-fill-mode: forwards;
 }

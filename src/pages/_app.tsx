@@ -2,10 +2,8 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import '../styles/main.scss';
-import { SideMenu } from "../components/SideMenu";
 import { IconsSocial } from "../components/IconsSocial";
 import { Cursor } from "../components/Cursor";
-import useBodyClass from "../hooks/useBodyClass";
 import { AppContext } from '../context/AppContext';
 import { GA_TRACKING_ID, pageview } from "../utils/gtag";
 import Router from 'next/router';
@@ -22,9 +20,7 @@ const AsteroidsBackground = dynamic(
 );
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [linkHovered, setLinkHovered] = React.useState(false);
-  useBodyClass(`${menuOpen ? 'menu--open' : ''}`);
 
   React.useEffect(() => {
     handleGoogleAnalytics();
@@ -41,8 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   const contextValue = {
-    menuOpen,
-    setMenuOpen,
     linkHovered,
     setLinkHovered
   };
@@ -93,7 +87,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <AwardCSSDA />
-      <SideMenu />
       <IconsSocial />
       <AsteroidsBackground />
       <Component {...pageProps} />

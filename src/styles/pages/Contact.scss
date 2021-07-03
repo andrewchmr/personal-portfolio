@@ -42,53 +42,6 @@
   }
 }
 
-.Contact__paragraph {
-  position: relative;
-  display: inline-block;
-
-  &::after{
-    -webkit-animation-duration: .8s;
-    animation-duration: .8s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    background-color: #fefefe;
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    -webkit-transform: scale3d(0, 1, 1);
-    transform: scale3d(0, 1, 1);
-    -webkit-transform-origin: left center;
-    -ms-transform-origin: left center;
-    transform-origin: left center;
-    transition: .35s transform;
-  }
-
-  &:nth-child(2)::after {
-      -webkit-animation-name: animateStripfromLeft;
-      animation-name: animateStripfromLeft;
-  }
-
-  &:nth-child(3)::after{
-      -webkit-animation-delay: .2s;
-      animation-delay: .2s;
-      -webkit-animation-name: animateStripfromRight;
-      animation-name: animateStripfromRight;
-  }
-
-  &:nth-child(4)::after{
-      -webkit-animation-delay: .4s;
-      animation-delay: .4s;
-      -webkit-animation-name: animateStripfromLeft;
-      animation-name: animateStripfromLeft;
-  }
-}
-
 @media print, screen and (min-width: $breakpoint-tablet) {
   .Contact__socials {
     display: none;

@@ -3,11 +3,7 @@ import { useRouter } from 'next/router'
 import classNames from "classnames";
 import { isMobile } from "../utils/isMobile";
 import { AppContext } from "../context/AppContext";
-
-interface Position {
-  x: number,
-  y: number
-}
+import { Position } from "../types";
 
 export const Cursor = () => {
   const router = useRouter();

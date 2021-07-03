@@ -21,11 +21,23 @@ export const Travel: React.FC<Props> = ({ location }) => {
 
   return (
     <Layout contentClassName="Travel">
-      <ScrollAnimation animateIn="animateStripfromLeft">
-        {location?.now?.city && <><strong>{location.now.city}</strong> now </>}
-        {location?.next?.city && <>👉 <strong>{location.next.city}</strong> in {diffInDays} {pluralize('day', diffInDays)}</>}
+      <ScrollAnimation
+        className='paragraph'
+        animateIn="animateStripfromLeft">
+        Traveling the world as much as possible
       </ScrollAnimation>
-      <ScrollAnimation animateIn="fadeIn" className="Travel__iframeWrapper">
+      {(location?.now?.city || location?.next?.city) &&
+        (<ScrollAnimation
+          className='paragraph'
+          delay={600}
+          animateIn="animateStripfromRight">
+          {location?.now?.city && <><strong>{location.now.city}</strong> now </>}
+          {location?.next?.city && <>👉 <strong>{location.next.city}</strong> in {diffInDays} {pluralize('day', diffInDays)}</>}
+        </ScrollAnimation>)}
+      <ScrollAnimation
+        delay={0}
+        animateIn="fadeIn"
+        className="Travel__iframeWrapper">
         <iframe title="Map" src="https://nomadlist.com/@andrewchmr/embed?dark=true" scrolling="no" frameBorder="0" allowFullScreen />
       </ScrollAnimation>
     </Layout>);
