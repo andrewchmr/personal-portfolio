@@ -1,6 +1,7 @@
 .Travel {
   flex-direction: column;
   width: 100%;
+  font-size: 14px;
 
   &__iframeWrapper {
     opacity: 0;
@@ -22,16 +23,16 @@
     }
   }
 
-  & .paragraph {
-    font-size: 14px;
-  }
-
   @media screen and (min-width: $breakpoint-tablet) {
     &__iframeWrapper {
       padding-top: 56.25%;
     }
 
-    & .paragraph {
+    &__info {
+      font-size: 27px;
+    }
+
+    &__city-info {
       font-size: 30px;
     }
   }

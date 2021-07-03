@@ -22,13 +22,13 @@ export const Travel: React.FC<Props> = ({ location }) => {
   return (
     <Layout contentClassName="Travel">
       <ScrollAnimation
-        className='paragraph'
+        className='paragraph Travel__info'
         animateIn="animateStripfromLeft">
         Traveling the world as much as possible
       </ScrollAnimation>
       {(location?.now?.city || location?.next?.city) &&
         (<ScrollAnimation
-          className='paragraph'
+          className='paragraph Travel__city-info'
           delay={600}
           animateIn="animateStripfromRight">
           {location?.now?.city && <><strong>{location.now.city}</strong> now </>}
