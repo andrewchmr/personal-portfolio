@@ -24,6 +24,11 @@ body {
   background: white !important;
 }
 
+html,body, 
+#fullpage{
+    height:100%;
+}
+
 ::selection {
   background: darkgrey;
 }
