@@ -39,6 +39,12 @@ const Tooltips = () => {
 };
 
 function Index({ location }: Props) {
+  const [isFullPageLoaded, setIsFullPageLoaded] = React.useState(false);
+
+  const afterLoad = React.useCallback(() => {
+    setIsFullPageLoaded(true);
+  }, []);
+
   return (
     <>
       <SideMenu />
@@ -47,26 +53,29 @@ function Index({ location }: Props) {
         menu='#sideMenu'
         scrollingSpeed={1000}
         licenseKey='FB7A698F-5FAA4A1E-87B53A37-B36648F0'
+        afterLoad={afterLoad}
         render={() =>
         (
           <ReactFullpage.Wrapper>
-            <Layout>
-              <section className={'Index'}>
-                <ScrollAnimation className='paragraph' animateIn="animateStripfromLeft">
-                  Hey, I’m{' '}
-                  <a data-tip={true} data-for="my-photo">Andriy Chemerynskiy</a>
-                  , a Software Engineer
-                </ScrollAnimation>
-                <ScrollAnimation delay={600} className='paragraph' animateIn="animateStripfromRight"> currently based in {' '}
-                  <a data-tip={true} data-for="wroclaw-photo">Wroclaw, Poland</a>.
-                </ScrollAnimation>
-                <Tooltips />
-              </section>
-            </Layout>
-            <SkillsComponent />
-            <ProjectsComponent />
-            <Travel location={location} />
-            <ContactComponent />
+            <div style={{ display: isFullPageLoaded ? 'block' : 'none' }}>
+              <Layout>
+                <section className={'Index'}>
+                  <ScrollAnimation className='paragraph' animateIn="animateStripfromLeft">
+                    Hey, I’m{' '}
+                    <a data-tip={true} data-for="my-photo">Andriy Chemerynskiy</a>
+                    , a Software Engineer
+                  </ScrollAnimation>
+                  <ScrollAnimation delay={600} className='paragraph' animateIn="animateStripfromRight"> currently based in {' '}
+                    <a data-tip={true} data-for="wroclaw-photo">Wroclaw, Poland</a>.
+                  </ScrollAnimation>
+                  <Tooltips />
+                </section>
+              </Layout>
+              <SkillsComponent />
+              <ProjectsComponent />
+              <Travel location={location} />
+              <ContactComponent />
+            </div>
           </ReactFullpage.Wrapper>)
         }
       />
