@@ -13,6 +13,15 @@ body {
   cursor: none;
 }
 
+html,
+body,
+#fullpage,
+.section,
+.slide,
+.fp-tableCell {
+  height: 100%;
+}
+
 *,
 *:before,
 *:after {
@@ -22,11 +31,6 @@ body {
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: white !important;
-}
-
-html,body, 
-#fullpage{
-    height:100%;
 }
 
 ::selection {
