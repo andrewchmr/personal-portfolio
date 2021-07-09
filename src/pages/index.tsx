@@ -94,7 +94,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         location
       },
-      revalidate: 43200
+      revalidate: 60
     }
   } catch (err) {
     return { props: { errors: err.message } }
