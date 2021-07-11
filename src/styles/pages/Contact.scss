@@ -1,91 +1,48 @@
-.Contact__socials {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0 0 21px;
-  -webkit-animation-name: fade-in;
-  animation-name: fade-in;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+.Contact {
+  flex-direction: column;
 
-  & > ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-
-    & > li {
-      display: inline-block;
-
-      & > a {
-        padding: 0 6px;
-        line-height: 1;
-        text-decoration: none;
-        display: block;
-      }
-    }
-
-    & > li:not(:last-child) a {
-      position: relative;
-
-      &::after {
-        content: "-";
-        display: block;
-        right: 0;
-        top: 0;
-        position: absolute;
-        -webkit-transform: translate(50%);
-        -ms-transform: translate(50%);
-        transform: translate(50%);
-      }
-    }
-  }
-}
-
-.Contact__paragraph {
-  position: relative;
-  display: inline-block;
-
-  &::after{
-    -webkit-animation-duration: .8s;
-    animation-duration: .8s;
+  &__socials {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 21px;
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    background-color: #fefefe;
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    -webkit-transform: scale3d(0, 1, 1);
-    transform: scale3d(0, 1, 1);
-    -webkit-transform-origin: left center;
-    -ms-transform-origin: left center;
-    transform-origin: left center;
-    transition: .35s transform;
-  }
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 
-  &:nth-child(2)::after {
-      -webkit-animation-name: animateStripfromLeft;
-      animation-name: animateStripfromLeft;
-  }
+    & > ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
 
-  &:nth-child(3)::after{
-      -webkit-animation-delay: .2s;
-      animation-delay: .2s;
-      -webkit-animation-name: animateStripfromRight;
-      animation-name: animateStripfromRight;
-  }
+      & > li {
+        display: inline-block;
 
-  &:nth-child(4)::after{
-      -webkit-animation-delay: .4s;
-      animation-delay: .4s;
-      -webkit-animation-name: animateStripfromLeft;
-      animation-name: animateStripfromLeft;
+        & > a {
+          padding: 0 6px;
+          line-height: 1;
+          text-decoration: none;
+          display: block;
+        }
+      }
+
+      & > li:not(:last-child) a {
+        position: relative;
+
+        &::after {
+          content: "-";
+          display: block;
+          left: 0;
+          top: 0;
+          position: absolute;
+          -webkit-transform: translate(50%);
+          -ms-transform: translate(50%);
+          transform: translate(50%);
+        }
+      }
+    }
   }
 }
 

@@ -55,7 +55,8 @@
     width: 15px;
     height: 15px;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       display: block;
       content: "";
       position: absolute;
@@ -92,9 +93,10 @@
     transition: 0.35s transform, 0.35s opacity;
   }
 
-  & a.SideMenu__link--current, & a:hover {
+  & .active,
+  & a:hover {
     & .SideMenu__link-name {
-      opacitY: 1;
+      opacity: 1;
       -webkit-transform: translate3d(12px, 0, 0);
       transform: translate3d(12px, 0, 0);
     }
@@ -119,10 +121,10 @@
 
 @media screen and (max-width: $breakpoint-tablet - 1px) {
   .SideMenu {
-    display: none;
-  }
-}
+    left: 11px;
 
-body.menu--open .SideMenu {
-  display: none;
+    &__link-name {
+      display: none;
+    }
+  }
 }

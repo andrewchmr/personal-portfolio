@@ -1,5 +1,8 @@
-.NoMatch{
-  &__img{
+.NoMatch {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
     max-width: 100%;
   }
 }

@@ -3,7 +3,7 @@
   height: 40px;
   border: 2px solid $white;
   border-radius: 100%;
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 150ms ease;

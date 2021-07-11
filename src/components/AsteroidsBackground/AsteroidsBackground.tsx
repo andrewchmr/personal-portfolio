@@ -2,7 +2,7 @@ import React from "react";
 import { Asteroid } from "./Asteroid";
 import p5 from "p5";
 
-const ASTEROIDS_NUMBER = 10;
+const ASTEROIDS_NUMBER = 15;
 const BG_COLOR = '#121212';
 
 const AsteroidsBackground = () => {
