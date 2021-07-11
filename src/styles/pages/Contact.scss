@@ -34,7 +34,7 @@
         &::after {
           content: "-";
           display: block;
-          left: 0;
+          right: 0;
           top: 0;
           position: absolute;
           -webkit-transform: translate(50%);
