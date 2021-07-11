@@ -1,21 +1,15 @@
 import React from "react";
-import { ProjectsComponent } from "../components/Projects";
-import { SkillsComponent } from "../components/Skills";
-import { ContactComponent } from "../components/Contact";
+import { Projects } from "../components/Projects";
+import { Skills } from "../components/Skills";
+import { Contact } from "../components/Contact";
 import { Travel } from "../components/Travel";
 // @ts-ignore
 import ReactFullpage from "@fullpage/react-fullpage";
 import { anchors } from "../utils/anchors";
-import { GetStaticProps } from "next";
-import { TravelLocation } from "../types";
 import { SideMenu } from "../components/SideMenu";
 import { About } from "../components/About";
 
-interface Props {
-  location: TravelLocation;
-}
-
-function Index({ location }: Props) {
+function Index() {
   return (
     <>
       <SideMenu />
@@ -28,10 +22,10 @@ function Index({ location }: Props) {
         (
           <ReactFullpage.Wrapper>
             <About />
-            <SkillsComponent />
-            <ProjectsComponent />
-            <Travel location={location} />
-            <ContactComponent />
+            <Skills />
+            <Projects />
+            <Travel />
+            <Contact />
           </ReactFullpage.Wrapper>)
         }
       />
@@ -40,19 +34,3 @@ function Index({ location }: Props) {
 }
 
 export default Index;
-
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const response = await fetch('https://nomadlist.com/@andrewchmr.json');
-    const { location } = await response.json();
-
-    return {
-      props: {
-        location
-      },
-      revalidate: 60
-    }
-  } catch (err) {
-    return { props: { errors: err.message } }
-  }
-}

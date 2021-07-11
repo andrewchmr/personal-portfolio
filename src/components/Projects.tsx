@@ -3,7 +3,7 @@ import { Layout } from "../components/Layout";
 import { AppContext } from "../context/AppContext";
 import { ScrollAnimation } from "./ScrollAnimation";
 
-export const ProjectsComponent = () => {
+export const Projects = () => {
   const context = React.useContext(AppContext);
 
   return (

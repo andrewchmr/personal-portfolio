@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../components/Layout";
 import { ScrollAnimation } from "./ScrollAnimation";
 
-export const ContactComponent = () => {
+export const Contact = () => {
   return (
     <Layout contentClassName="Contact">
       <div className="Contact__socials">

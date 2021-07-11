@@ -4,11 +4,18 @@ import { Layout } from "./Layout";
 import { ScrollAnimation } from "./ScrollAnimation";
 import pluralize from 'pluralize';
 
-interface Props {
-  location: TravelLocation;
-}
+export const Travel = () => {
+  const [location, setLocation] = React.useState<TravelLocation>();
 
-export const Travel: React.FC<Props> = ({ location }) => {
+  React.useEffect(() => {
+    const fetchLocation = async () => {
+      const response = await fetch('https://nomadlist.com/@andrewchmr.json');
+      const { location } = await response.json();
+      setLocation(location);
+    }
+
+    fetchLocation();
+  }, []);
 
   const diffInDays = React.useMemo(() => {
     if (!location?.next) {

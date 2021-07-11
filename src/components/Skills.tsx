@@ -25,7 +25,7 @@ const SplitText = ({ text }: { text: string }) => {
   );
 }
 
-export const SkillsComponent = () => {
+export const Skills = () => {
   const context = useContext(AppContext);
 
   return (
