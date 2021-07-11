@@ -1,42 +1,46 @@
-.Contact__socials {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0 0 21px;
-  -webkit-animation-name: fade-in;
-  animation-name: fade-in;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+.Contact {
+  flex-direction: column;
 
-  & > ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  &__socials {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 21px;
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 
-    & > li {
-      display: inline-block;
+    & > ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
 
-      & > a {
-        padding: 0 6px;
-        line-height: 1;
-        text-decoration: none;
-        display: block;
+      & > li {
+        display: inline-block;
+
+        & > a {
+          padding: 0 6px;
+          line-height: 1;
+          text-decoration: none;
+          display: block;
+        }
       }
-    }
 
-    & > li:not(:last-child) a {
-      position: relative;
+      & > li:not(:last-child) a {
+        position: relative;
 
-      &::after {
-        content: "-";
-        display: block;
-        right: 0;
-        top: 0;
-        position: absolute;
-        -webkit-transform: translate(50%);
-        -ms-transform: translate(50%);
-        transform: translate(50%);
+        &::after {
+          content: "-";
+          display: block;
+          left: 0;
+          top: 0;
+          position: absolute;
+          -webkit-transform: translate(50%);
+          -ms-transform: translate(50%);
+          transform: translate(50%);
+        }
       }
     }
   }

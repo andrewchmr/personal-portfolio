@@ -10,32 +10,7 @@
   }
 
   & .paragraph {
-    position: relative;
-    display: inline-block;
     margin: 18px 0;
-
-    &::after {
-      -webkit-animation-duration: 0.8s;
-      animation-duration: 0.8s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      background-color: #fefefe;
-      bottom: 0;
-      content: "";
-      display: block;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      -webkit-transform: scale3d(0, 1, 1);
-      transform: scale3d(0, 1, 1);
-      -webkit-transform-origin: left center;
-      -ms-transform-origin: left center;
-      transform-origin: left center;
-      transition: 0.35s transform;
-    }
   }
 
   &__circle-wrapper {
@@ -59,7 +34,6 @@
     color: white;
     line-height: 1;
     font-size: 1em;
-    z-index: 10000;
     padding: 5px 1px;
     border-top: 2px solid white;
     border-bottom: 2px solid white;

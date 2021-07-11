@@ -11,11 +11,11 @@ const NoMatch = () => {
         <meta name="og:title" property="og:title" content='Page not found' />
       </Head>
       <img alt="Sad Baby Yoda - GIF" className='NoMatch__img' src='/static/baby-yoda.gif' />
-      <div>Sorry, that page cannot be found</div>
-      <div>Try going <Link href={'/'}>
+      <span>Sorry, that page cannot be found</span>
+      <span>Try going <Link href={'/'}>
         <a>here</a>
       </Link> instead, thanks.
-      </div>
+      </span>
     </Layout>
   )
 };
