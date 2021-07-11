@@ -27,17 +27,10 @@ const SplitText = ({ text }: { text: string }) => {
 
 export const SkillsComponent = () => {
   const context = useContext(AppContext);
-  const [isRendered, setIsRendered] = React.useState(false);
-
-  React.useLayoutEffect(() => {
-    setIsRendered(true);
-  }, []);
 
   return (
     <Layout contentClassName="Skills">
-
-      {isRendered && <SplitText text="Front-end react typescript javascript node.js web " />}
-
+      <SplitText text="Front-end react typescript javascript node.js web " />
       <div className={'Skills__text'}>
         <ScrollAnimation
           delay={0}

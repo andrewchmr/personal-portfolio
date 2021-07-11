@@ -39,12 +39,6 @@ const Tooltips = () => {
 };
 
 function Index({ location }: Props) {
-  const [isFullPageLoaded, setIsFullPageLoaded] = React.useState(false);
-
-  const afterLoad = React.useCallback(() => {
-    setIsFullPageLoaded(true);
-  }, []);
-
   return (
     <>
       <SideMenu />
@@ -53,11 +47,10 @@ function Index({ location }: Props) {
         menu='#sideMenu'
         scrollingSpeed={1000}
         licenseKey='FB7A698F-5FAA4A1E-87B53A37-B36648F0'
-        afterLoad={afterLoad}
         render={() =>
         (
           <ReactFullpage.Wrapper>
-            <div style={{ visibility: isFullPageLoaded ? 'visible' : 'hidden' }}>
+            <div>
               <Layout>
                 <section className={'Index'}>
                   <ScrollAnimation className='paragraph' animateIn="animateStripfromLeft">
@@ -88,7 +81,7 @@ export default Index;
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const response = await fetch('https://nomadlist.com/@andrewchmr.json');
-    let { location } = await response.json();
+    const { location } = await response.json();
 
     return {
       props: {
